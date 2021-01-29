@@ -36,10 +36,10 @@
         ////////////////////////////////////////////////////////////////////////
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
-       
-        cretaeCollectable(steve, 22, 222, 321,0.6);
-        createCollectablew(max, 55, 777, 33, 0.3);
-        createCollectable(grace, 22, 12, 33, 45);
+        // example: 
+         createCollectable(type.steve, 22, 222, 321, 0.6);
+        createCollectable(type.max, 55, 600, 33, 0.3);
+        createCollectable(type.grace, 22, 12, 33, 45);
         
         
         
