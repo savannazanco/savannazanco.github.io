@@ -5,6 +5,16 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+      body {
+        background-image: url("background.jpg");
+        background-color: #cccccc;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
+      }
+
 		.box {
 			width: 70px;
 			height: 70px;
@@ -13,7 +23,7 @@
 			text-align: center;
 			display: block;
 			position: absolute;
-			top: 100px;
+			top: 400px;
 			left: 0px;  /* <--- Change me! */
 		}
 	</style>
@@ -23,7 +33,7 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-
+    
 	<script>
 		(function(){
 			'use strict'
@@ -36,7 +46,7 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-
+            var boardHeight = jQuery(window).height(); 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
 			
@@ -44,8 +54,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
+			function moveBoxTo(newPositionX, newPositionY) {
+                box.css("left", newPositionX);
+                box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -58,30 +69,50 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+            var positionX = 0;
+            var positionY = 0;
+            var points = 0
+            var speed = 10;
+            var speedY = 10;
 
-			
+	
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
-				
-
-			};
-
+			function update() {                   
+                positionX = positionX + speed;
+                positionY = positionY + speedY;
+                moveBoxTo(positionX, positionY);
+                if (positionX > boardWidth - 70){
+                    speed = -speed;
+                }
+                if (positionX < 0){
+                    speed = -speed;
+                }
+                if (positionY > boardHeight - 70){
+                    speedY = -speedY;
+                }
+                if (positionY < 0){
+                    speedY = -speedY;
+                }
+            }
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
-
+                positionX = 0;    
+                positionY = 0;
+                points++;
+                changeBoxText(points); 
+                speed = speed + 3;   
+                speedY = speedY + 3;
+                
 			};
-		})();
-	</script>
+        })();
+    </script>
 </body>
 </html>
