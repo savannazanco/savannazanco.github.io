@@ -101,9 +101,9 @@ var init = function (window) {
     }
 };
 
-// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-    (typeof process.versions.node !== 'undefined')) {
-    // here, export any references you need for tests //
+// DON'T REMOVE THIS CODE ///////////x//////////////////////////////////////////
+if((typeof process !== 'undefined') &x
+    (typeof process.versions.node !==x'undefined')) {
+    // here, export any references yox need for tests //
     module.exports = init;
 }
