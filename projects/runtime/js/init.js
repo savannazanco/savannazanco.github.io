@@ -24,7 +24,7 @@ var init = function (window) {
         playerManager, 
         particleManager;
     
-    var debugHalleHitZones = false;
+    var debugHalleHitZones = true;
 
     space = app.space;
     rules = app.rules,
@@ -76,9 +76,12 @@ var init = function (window) {
 var hud = opspark.makeHud();
 view.addChild(hud);
 window.hud = hud;
-
+    // TODO 6 : create game manager
+    
     var game = opspark.createGameManager(app,hud);
     opspark.runLevelInGame(game);
+
+
 
 };
 
