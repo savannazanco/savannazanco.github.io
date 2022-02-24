@@ -1,0 +1,68 @@
+
+body {
+background-color: rgb(4, 8, 4); 
+}
+#board {
+width: 1500px;
+height: 700px;
+border: 1px solid white;
+background-color: black;
+position: absolute;
+}
+#paddleLeft {
+background-color: rgb(219, 73, 73);
+width: 50px;
+height: 200px;
+border-radius: 30px;
+position: absolute;
+top: 200px;
+}
+#ball {
+background-color: rgb(240, 231, 223);
+width: 40px;
+height: 40px;
+border-radius: 20px;
+position: absolute;
+top: 222px;
+left: 222px;
+}
+#paddleRight {
+background-color: rgb(219, 73, 73);
+width: 50px;
+height: 200px;
+border-radius: 30px;
+position: absolute;
+top: 100px;
+}
+#score1 {
+font-size: 4vw;
+font-family: 'Press Start 2P', cursive;
+color: rgb(27, 177, 236);
+position: absolute;
+left: 100px;
+top: 50px;
+}
+#score2 {
+  font-size: 4vw;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(27, 177, 236);
+  position: absolute;
+  left: 1350px;
+  top: 50px;
+  }
+  #playAgain {
+    text-align: center;
+    margin: 30px 0 0 0; 
+    font-size: 3vw;
+    font-family: "Arial", cursive;
+    color: rgb(216, 179, 179); 
+    position: absolute;
+  }
+
+/*  the color of the element
+/*  width: the width of the element in pixels
+/*  height: the height of the element in pixels
+/*  border-radius: how rounded the edges of the element are.  
+/*  position: absolute: allows us to use the top and left properties to position HTML elements anywhere we want on the screen relative to the parent element.
+/*  top: the y-coordinate location of the element on a flipped y-axis (value increases as you move downwards).
+/*  left: the x-coordinate location of the element.
